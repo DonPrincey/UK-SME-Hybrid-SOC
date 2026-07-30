@@ -25,7 +25,7 @@ containment decisions, communications and incident recovery.
 | Customers | Depend on the confidentiality and availability of services | Protection of information and continued service | Medium | Approved external communications where required |
 | Executive Leadership Team | Makes strategic and high-impact response decisions | Business continuity, reputation and financial protection | High | Business impact, major decisions and recovery status |
 
-## Stakeholder categories
+## Stakeholder groups
 
 ### Decision-makers
 
@@ -52,6 +52,20 @@ containment decisions, communications and incident recovery.
 - Customers
 - Technology suppliers
 - Contractual partners
+
+## Incident responsibilities
+
+During a security incident:
+
+- The SOC Analyst investigates alerts and gathers evidence.
+- The Systems Administrator supports technical containment.
+- The IT Manager approves significant operational changes.
+- The Executive Sponsor approves high-impact business decisions.
+- The Compliance Representative assesses privacy and reporting obligations.
+- Human Resources supports incidents involving employees.
+- Department Managers coordinate affected business teams.
+- The Service Desk receives user reports and distributes approved instructions.
+- External providers support systems under their responsibility.
 
 ## Communication principles
 
