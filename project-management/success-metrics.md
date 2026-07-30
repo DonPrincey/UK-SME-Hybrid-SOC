@@ -31,7 +31,7 @@ Project Beacon will use the following principles:
 | Project charter completed | 1 | `project-charter.md` | Complete |
 | Stakeholder register completed | 1 | `stakeholder-register.md` | Complete |
 | Risk register completed | 1 | `risk-register.md` | Complete |
-| Success-measurement framework completed | 1 | `success-metrics.md` | In progress |
+| Success-measurement framework completed | 1 | `success-metrics.md` | Complete |
 | RACI matrix completed | 1 | `raci-matrix.md` | Not started |
 | Major project phases formally reviewed | 1 review per phase | Progress and review records | Not started |
 
