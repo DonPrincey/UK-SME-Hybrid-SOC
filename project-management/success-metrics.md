@@ -42,7 +42,7 @@ Project Beacon will use the following principles:
 | Hybrid SOC architecture diagram | 1 | Architecture image and explanation | Not started |
 | Security-log data-flow diagram | 1 | Log-flow image and explanation | Not started |
 | Asset inventory | 1 complete inventory | asset-inventory.md | Completed |
-| Security data-source register | 1 complete register | `data-source-register.md` | Not started |
+| Security data-source register | 1 complete register | data-source-register.md | Completed |
 | Trust boundaries identified | All major boundaries | Architecture documentation | Completed |
 | Major systems labelled | 100% of in-scope systems | Architecture diagram | Not started |
 
