@@ -286,3 +286,193 @@ All records used in demonstrations will be:
 - Safely simulated
 - Generated within the authorised laboratory
 - Obtained from approved public security datasets where necessary
+
+# 7. Network and remote-access assets
+
+Beacon Professional Services Ltd uses internal networking, internet
+connectivity and remote-access services to support office, hybrid and
+remote employees.
+
+The fictional production environment is represented logically. The
+laboratory will recreate only the network components needed for safe
+monitoring and incident simulation.
+
+| Asset ID | Asset name | Asset type | Purpose | Important evidence | Criticality |
+|---|---|---|---|---|---|
+| NET-001 | Internet gateway | Network boundary | Connects Beacon systems and users to external services | Source and destination IP addresses, denied connections and outbound traffic | Critical |
+| NET-002 | Perimeter firewall | Network-security device | Controls traffic between trusted and untrusted networks | Allowed and denied traffic, rule changes and connection records | Critical |
+| NET-003 | Office local-area network | Internal network | Connects employee endpoints and internal services | Internal connections, device activity and unusual traffic patterns | High |
+| NET-004 | Server network | Restricted internal network | Hosts identity, file and application servers | Administrative access, lateral movement and server-to-server activity | Critical |
+| NET-005 | Azure virtual network | Cloud network | Connects the planned Azure laboratory resources | Network configuration, security rules and traffic evidence | High |
+| NET-006 | User subnet | Network segment | Contains employee or laboratory endpoint systems | Endpoint connections and access to internal services | High |
+| NET-007 | Server subnet | Restricted network segment | Contains server and monitoring systems | Administrative traffic, service connections and lateral movement | Critical |
+| NET-008 | Network security group | Azure traffic-control service | Restricts permitted inbound and outbound Azure traffic | Rule creation, deletion, modification and denied traffic | High |
+| NET-009 | Virtual private network service | Remote-access service | Provides secure access for remote employees | VPN authentication, source IP addresses, connection times and failed access | Critical |
+| NET-010 | Domain Name System service | Network-support service | Resolves internal and external hostnames | DNS queries, unusual domains and command-and-control indicators | High |
+| NET-011 | Dynamic Host Configuration Protocol service | Network-support service | Assigns network configuration to devices | Address assignments and device-to-IP relationships | Medium |
+| NET-LAB-001 | Project Beacon isolated laboratory network | Authorised test network | Separates controlled attack simulation from unrelated systems | Connections, packet captures and IDS alerts | Critical |
+
+## Network monitoring priorities
+
+Project Beacon will prioritise:
+
+- Connections from unexpected external IP addresses
+- Repeated denied connections
+- Unusual outbound traffic
+- Remote access outside expected working patterns
+- Connections between user and server networks
+- Lateral movement between internal systems
+- Suspicious DNS queries
+- Connections to unusual ports
+- Large outbound data transfers
+- Traffic associated with known malicious indicators
+- Firewall or network-security-rule changes
+- Attempts to access administrative services
+- Communication between compromised endpoints and external systems
+
+## Network safety boundary
+
+All active testing will remain inside authorised laboratory networks.
+
+Before running any simulation, the project owner must verify:
+
+- The correct target IP address
+- The correct laboratory subnet
+- That no public or third-party system is being targeted
+- That the activity is permitted within the current environment
+- That traffic generation can be stopped immediately if required
+
+# 8. Security-monitoring and investigation tools
+
+The following tools form the planned Project Beacon monitoring and
+investigation capability.
+
+Some tools are mandatory for the core Microsoft-focused project. Others
+are optional extensions used only after the core environment works.
+
+| Asset ID | Tool | Role in Project Beacon | Planned use | Deployment status | Criticality |
+|---|---|---|---|---|---|
+| SEC-001 | Microsoft Sentinel | Primary SIEM and security-operations platform | Centralise logs, run KQL, create analytics rules and investigate incidents | Planned | Critical |
+| SEC-002 | Azure Log Analytics | Log-storage and query platform | Store and query security telemetry used by Sentinel | Planned | Critical |
+| SEC-003 | Azure Monitor | Cloud monitoring service | Generate alerts and monitor selected Azure resources | Planned | High |
+| SEC-004 | Sysmon | Windows endpoint telemetry tool | Record detailed process, network, file and registry activity | Planned | Critical |
+| SEC-005 | Windows Security Event logging | Native Windows evidence source | Record authentication, account, privilege and policy events | Planned | Critical |
+| SEC-006 | PowerShell logging | Windows investigation source | Record script-block, module and command activity | Planned | High |
+| SEC-007 | Suricata | Primary network intrusion-detection system | Generate network alerts and structured `eve.json` evidence | Planned | High |
+| SEC-008 | Zeek | Optional network-visibility platform | Generate connection, DNS, HTTP and protocol metadata | Optional extension | Medium |
+| SEC-009 | Microsoft Defender XDR | Extended detection and response platform | Investigate endpoint, identity and Microsoft 365 activity where trial access permits | Planned subject to licensing | High |
+| SEC-010 | Microsoft Defender for Endpoint | Endpoint detection and response component | Review device alerts, process trees and endpoint evidence where available | Planned subject to licensing | High |
+| SEC-011 | Splunk Enterprise | Secondary SIEM platform | Recreate selected detections using SPL and demonstrate transferable SIEM skills | Optional extension | Medium |
+| SEC-012 | Sigma | Vendor-neutral detection-rule format | Document portable detection logic | Planned | Medium |
+| SEC-013 | GitHub | Version-control and portfolio platform | Store sanitised project documentation and evidence | Active | High |
+| SEC-014 | Wireshark | Packet-analysis tool | Inspect packet captures and validate network evidence | Planned | High |
+
+## Core tools
+
+The core Project Beacon environment will prioritise:
+
+1. Microsoft Sentinel
+2. Azure Log Analytics
+3. KQL
+4. Windows Security Events
+5. Sysmon
+6. Microsoft Entra ID and Active Directory evidence
+7. Suricata
+8. Wireshark
+9. Linux Syslog
+
+These tools must work before optional extensions are introduced.
+
+## Optional extensions
+
+The following tools will be used only when they do not delay the core
+Microsoft security-operations environment:
+
+- Zeek
+- Splunk
+- Microsoft Defender XDR trial capabilities
+- Microsoft Defender for Endpoint trial capabilities
+- Additional Sigma or SPL detection conversions
+
+Optional tools will not replace the primary Sentinel and KQL focus.
+
+# 9. Security testing and analyst systems
+
+| Asset ID | Asset name | Platform | Purpose | Security boundary | Criticality |
+|---|---|---|---|---|---|
+| TEST-001 | Kali Linux testing machine | Kali Linux | Generates controlled authentication, network and endpoint activity for authorised simulations | Laboratory only | High |
+| TEST-002 | SOC analyst workstation | Windows or Linux | Used to access Sentinel, review logs, write queries and maintain documentation | Authorised project use | High |
+| TEST-003 | Wireshark analysis system | Windows or Linux | Reviews packet captures and validates network activity | Laboratory evidence only | Medium |
+| TEST-004 | GitHub portfolio environment | Web platform | Publishes sanitised project evidence and documentation | Public information only | High |
+
+## Kali Linux permitted uses
+
+The Kali Linux machine may be used for:
+
+- Controlled network discovery inside the laboratory
+- Authentication testing against authorised laboratory accounts
+- Generating benign and suspicious network traffic
+- Testing Suricata visibility
+- Supporting password-spraying simulations using fictional accounts
+- Creating evidence for incident investigations
+- Validating detection coverage
+
+## Kali Linux prohibited uses
+
+The Kali machine must not be used for:
+
+- Scanning public systems without permission
+- Testing employer, university or customer systems
+- Accessing accounts without authorisation
+- Conducting destructive attacks
+- Distributing malware
+- Sending phishing messages to real users
+- Testing IP addresses outside the approved laboratory boundary
+
+# 10. Asset criticality definitions
+
+| Rating | Meaning |
+|---|---|
+| Critical | Compromise could materially affect identity, security monitoring, sensitive data or essential operations |
+| High | Compromise could significantly affect users, systems or confidential information |
+| Medium | Compromise would have a limited but meaningful operational or security effect |
+| Low | Asset has limited operational or security importance |
+
+# 11. Asset inventory summary
+
+The Project Beacon asset inventory now covers:
+
+- User groups
+- Employee and privileged identities
+- Windows endpoints
+- Windows and Linux servers
+- Microsoft 365 services
+- Azure laboratory resources
+- Customer, employee, financial and security information
+- Network devices and remote-access services
+- Security-monitoring tools
+- Authorised testing and analyst systems
+
+## Inventory maintenance
+
+The asset inventory will be updated when:
+
+- A laboratory asset is successfully deployed
+- A planned tool becomes active
+- A tool is deferred or removed
+- A new log source is connected
+- An incident reveals an unidentified asset
+- The architecture design changes
+- A major project phase is completed
+
+## Deployment-status values
+
+The following values will be used:
+
+- **Active:** Currently configured or in use
+- **Planned:** Approved for a future project phase
+- **In progress:** Deployment has started
+- **Optional extension:** Not required for the core project
+- **Blocked:** Cannot currently proceed
+- **Deferred:** Deliberately moved to a later stage
+- **Retired:** Removed from the project environment
