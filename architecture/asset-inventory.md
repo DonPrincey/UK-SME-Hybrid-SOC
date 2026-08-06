@@ -136,3 +136,153 @@ The SOC will prioritise:
 - File creation in unusual locations
 - Security-control changes
 - Evidence of credential access or lateral movement**
+
+
+# 4. Server assets
+
+Beacon Professional Services Ltd uses Windows and Linux servers to
+provide identity, file-storage, application and technical services.
+
+The fictional business environment contains several logical server
+assets. The practical laboratory will recreate only a small
+representative selection.
+
+| Asset ID | Asset name | Platform | Primary purpose | Environment | Important evidence | Criticality |
+|---|---|---|---|---|---|---|
+| SRV-001 | BEACON-DC01 | Windows Server | Active Directory Domain Services and DNS | Fictional business environment | Authentication events, account changes, Kerberos events, group changes and administrative activity | Critical |
+| SRV-002 | BEACON-FS01 | Windows Server | Stores departmental, customer and project files | Fictional business environment | File access, permission changes, failed access, file creation and large-volume copying | Critical |
+| SRV-003 | BEACON-APP01 | Windows Server | Hosts selected internal business applications | Fictional business environment | Application logs, service events, logons and process activity | High |
+| SRV-004 | BEACON-LNX01 | Ubuntu Linux Server | Supports selected technical or internal services | Fictional business environment | Syslog, authentication, process, service and network-connection logs | High |
+| SRV-LAB-001 | Beacon Windows Server laboratory system | Windows Server evaluation | Represents Active Directory, DNS and Windows server activity in the controlled lab | Planned laboratory | Windows Security Events, PowerShell logs and Sysmon where appropriate | Critical |
+| SRV-LAB-002 | Beacon Linux laboratory server | Ubuntu Linux | Generates Linux authentication, process and network telemetry | Planned laboratory | Syslog, authentication logs, service logs and network evidence | High |
+
+## Server monitoring priorities
+
+Project Beacon will prioritise monitoring for:
+
+- Successful and failed administrative logons
+- Creation, deletion and modification of user accounts
+- Addition of users to privileged groups
+- Kerberos and authentication anomalies
+- New or modified services
+- Scheduled-task creation
+- Suspicious PowerShell activity
+- Remote desktop and remote-management activity
+- File permission changes
+- Unusually large file access or copying
+- Linux SSH authentication activity
+- Use of elevated privileges
+- Unexpected outbound network connections
+- Security-log clearing or monitoring disruption
+
+## Laboratory limitation
+
+The laboratory will not recreate every fictional production server.
+
+The minimum planned server representation is:
+
+- One Windows Server evaluation system
+- One Windows employee test endpoint
+- One Linux server or Linux security-monitoring system
+
+Additional systems will be added only where they provide meaningful
+monitoring or incident-investigation evidence.
+
+# 5. Microsoft 365 and Azure assets
+
+Beacon relies on Microsoft cloud services for identity, communication,
+collaboration, file storage and security monitoring.
+
+| Asset ID | Asset name | Service type | Primary purpose | Environment | Important evidence | Criticality |
+|---|---|---|---|---|---|---|
+| CLD-001 | Microsoft 365 tenant | Cloud productivity platform | Provides organisational email, collaboration and cloud services | Fictional business environment / trial where available | User activity, email events, audit records and authentication evidence | Critical |
+| CLD-002 | Exchange Online | Cloud email service | Provides employee and business email | Fictional business environment / trial where available | Mailbox activity, forwarding rules, suspicious messages and email audit events | Critical |
+| CLD-003 | SharePoint Online | Cloud document platform | Stores shared departmental and project documents | Fictional business environment / trial where available | File access, sharing, downloading and permission changes | High |
+| CLD-004 | OneDrive for Business | User cloud storage | Stores and synchronises individual employee files | Fictional business environment / trial where available | File access, sharing, synchronisation and large-volume downloads | High |
+| CLD-005 | Microsoft Teams | Collaboration platform | Supports messaging, meetings and file collaboration | Fictional business environment / trial where available | User activity, file-sharing and audit events | Medium |
+| CLD-006 | Microsoft Azure subscription | Cloud platform | Hosts the Project Beacon Azure mini-lab and security services | Planned laboratory | Azure Activity Logs, resource changes, role assignments and sign-in activity | Critical |
+| CLD-007 | Beacon Azure resource group | Azure management container | Organises the project’s Azure laboratory resources | Planned laboratory | Resource creation, deletion and configuration changes | High |
+| CLD-008 | Beacon virtual network | Azure networking service | Provides network segmentation for the Azure laboratory | Planned laboratory | Network configuration, NSG activity and traffic evidence | High |
+| CLD-009 | Azure storage account | Cloud storage service | Demonstrates storage configuration, access and monitoring | Planned laboratory | Access records, configuration changes and security alerts | High |
+| CLD-010 | Log Analytics workspace | Security-data platform | Stores and queries logs used by Microsoft Sentinel | Planned laboratory | Ingestion status, table contents, query results and retention settings | Critical |
+
+## Cloud monitoring priorities
+
+Project Beacon will monitor or document:
+
+- Unusual sign-in activity
+- Authentication failures
+- Risky or unexpected locations
+- Mailbox forwarding-rule creation
+- Unusual email access
+- Large file downloads
+- External file sharing
+- Privileged-role assignments
+- Azure resource creation or deletion
+- Changes to networking and security controls
+- Storage-account access
+- Log-ingestion failures
+- Attempts to disable or reduce monitoring
+
+## Cloud-lab distinction
+
+Assets marked as part of the fictional business environment represent
+Beacon's intended operational environment.
+
+Assets marked as planned laboratory resources will be created only
+where trial access, licensing and cost controls permit.
+
+The repository will clearly distinguish between:
+
+- Fictional business assets
+- Planned laboratory assets
+- Successfully deployed laboratory assets
+- Simulated or dataset-based evidence
+
+# 6. Information assets
+
+Beacon stores customer, employee, contractual, financial and technical
+information.
+
+These information assets explain why the organisation is a realistic
+target for phishing, account compromise, privilege escalation and data
+exfiltration.
+
+| Asset ID | Information asset | Classification | Likely location | Business owner | Security relevance | Criticality |
+|---|---|---|---|---|---|---|
+| DATA-001 | Customer records | Restricted | Customer systems, SharePoint and business applications | Customer Account Manager | Exposure could harm customers and create contractual or regulatory consequences | Critical |
+| DATA-002 | Employee personal information | Restricted | Human Resources systems and protected file storage | Human Resources | Exposure could affect employee privacy and data-protection responsibilities | Critical |
+| DATA-003 | Commercial contracts | Confidential | SharePoint, file server and management storage | Executive Leadership | May contain pricing, obligations and commercially sensitive information | High |
+| DATA-004 | Financial information | Restricted | Finance systems, protected files and executive storage | Finance Manager | Theft or manipulation could cause direct financial and reputational damage | Critical |
+| DATA-005 | Microsoft 365 email | Confidential | Exchange Online | Department Managers | Compromised mailboxes may expose business information or enable further phishing | High |
+| DATA-006 | Project and technical files | Confidential | SharePoint, OneDrive and file server | Project Managers | May contain client information, designs, technical details and business plans | High |
+| DATA-007 | Help-desk records | Internal or confidential | Service-management platform | IT Manager | May expose user problems, device information and account-support activity | High |
+| DATA-008 | Security logs and incident evidence | Restricted | Log Analytics, Sentinel and investigation records | Project Lead / SOC Analyst | Evidence must remain accurate, available and protected from unauthorised alteration | Critical |
+| DATA-009 | System configuration information | Restricted | Administrative systems and protected documentation | Systems Administrator | Could assist attackers in identifying systems, accounts and security weaknesses | Critical |
+| DATA-010 | Backup and recovery information | Restricted | Protected backup locations | IT Manager | Compromise could prevent recovery or support destructive attacks | Critical |
+
+## Data-protection priorities
+
+The project will prioritise:
+
+- Confidentiality of customer and employee information
+- Integrity of security logs and incident evidence
+- Protection of financial and contractual information
+- Monitoring of unusual access and file downloads
+- Restriction of privileged access
+- Protection against unauthorised sharing
+- Identification of large-volume file copying
+- Preservation of evidence during investigations
+- Sanitisation of all public portfolio material
+
+## Data-handling boundary
+
+Project Beacon will not use genuine customer, employee or employer data.
+
+All records used in demonstrations will be:
+
+- Fictional
+- Sanitised
+- Safely simulated
+- Generated within the authorised laboratory
+- Obtained from approved public security datasets where necessary
