@@ -33,7 +33,7 @@ Project Beacon will use the following principles:
 | Risk register completed | 1 | `risk-register.md` | Complete |
 | Success-measurement framework completed | 1 | `success-metrics.md` | Complete |
 | RACI matrix completed | 1 | `raci-matrix.md` | Complete |
-| Major project phases formally reviewed | 1 review per phase | Progress and review records | Not started |
+| Major project phases formally reviewed | 1 review per phase | Progress and review records | Completed |
 
 # 2. Architecture measurements
 
@@ -43,7 +43,7 @@ Project Beacon will use the following principles:
 | Security-log data-flow diagram | 1 | Log-flow image and explanation | Not started |
 | Asset inventory | 1 complete inventory | asset-inventory.md | Completed |
 | Security data-source register | 1 complete register | `data-source-register.md` | Not started |
-| Trust boundaries identified | All major boundaries | Architecture documentation | Not started |
+| Trust boundaries identified | All major boundaries | Architecture documentation | Completed |
 | Major systems labelled | 100% of in-scope systems | Architecture diagram | Not started |
 
 ## Required architecture components
